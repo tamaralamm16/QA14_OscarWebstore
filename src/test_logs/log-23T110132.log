@@ -1,0 +1,4 @@
+11:01:35.449 [main] INFO  oscar.tests.TestBase - Start test: existedUserSelectProductTest
+11:01:48.810 [main] INFO  oscar.tests.TestBase - Test result: PASSED
+11:01:48.810 [main] INFO  oscar.tests.TestBase - Stop test: null
+11:01:48.810 [main] INFO  oscar.tests.TestBase - *****************************
