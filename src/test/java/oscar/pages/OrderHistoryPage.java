@@ -34,7 +34,7 @@ public class OrderHistoryPage extends PageBase {
     public boolean  checkBookDescription() {
         return bookName.isDisplayed();
     }
-    @FindBy(id = "add_to_basket_form")
+    @FindBy(xpath = "(//button[@type='submit'])[4]")
     WebElement addToBasketBtn;
 
     public OrderHistoryPage addTheBookToBasket() {

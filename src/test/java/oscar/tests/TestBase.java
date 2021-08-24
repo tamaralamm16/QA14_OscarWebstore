@@ -29,7 +29,7 @@ public class TestBase {
     }
 
 
-    @BeforeMethod(alwaysRun = true)
+    @BeforeMethod(alwaysRun = false)
     public void setUp() {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
@@ -37,7 +37,7 @@ public class TestBase {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 
-    @AfterMethod(enabled = true)
+    @AfterMethod(enabled = false)
     public void tearDown(ITestResult result) {
 
         if(result.isSuccess()) {
