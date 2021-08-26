@@ -29,9 +29,7 @@ public class LoginPageTests extends TestBase {
     public void checkEmailInUserProfile() {
         new RegisterPage(driver).fillLoginForm("Sidorov@mail.ru", "Sidor12345$");
         new ProfilePage(driver).userAccountPreview();
-        String userEmail;
-        userEmail = new ProfilePage(driver).getUserEmail();
-        System.out.println(userEmail);
-        Assert.assertEquals(new ProfilePage(driver).getUserEmail(), "Sidorov@mail.ru" );
+        Assert.assertTrue(new ProfilePage(driver).isUserEmailEqualText("Sidorov@mail.ru"));
+
     }
 }

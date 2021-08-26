@@ -9,14 +9,6 @@ public class OrderOverviewPage extends PageBase {
         super(driver);
     }
 
-    @FindBy(xpath = "//a[contains(text(),'Coders at Work')]")
-    WebElement bookName;
-
-
-    public OrderOverviewPage ensureIfTheRightBookIsInTheBasket(String name) {
-        bookName.getText();
-        return this;
-    }
 
     @FindBy(id = "place-order")
     WebElement submitOrder;

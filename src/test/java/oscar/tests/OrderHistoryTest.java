@@ -15,23 +15,6 @@ public class OrderHistoryTest extends TestBase {
     }
 
     @Test
-    public void existedUserSelectProductTest() {
-        new RegisterPage(driver).fillLoginForm("Kuznetsov9@mail.ru", "Kuz95512$%");
-        Assert.assertTrue(new HomePage(driver).isWillkomenMessageAppears());
-        new HomePage(driver).selectCategory();
-        new OrderHistoryPage(driver).goToBookDescription();
-        new OrderHistoryPage(driver).addTheBookToBasket().goToBasketView();
-        new OrderHistoryPage(driver).proceedToBuyBook();
-        Assert.assertTrue(new ShippingAddressPage(driver).isShippingAddressPageAppears());
-        new ShippingAddressPage(driver).fillPersonalDate("Ivan", "Kuznetsov")
-            .fillAddress("Otto-Grot-Strasse-50", "Hamburg", "21031")
-            .selectCountry("Germany").clickOnContinueButton();
-        new PaymentPage(driver).clickOnSubmitButton();
-        new OrderOverviewPage(driver).ensureIfTheRightBookIsInTheBasket("Coders at Work").orderSubmit().continueShopping();
-        new ProfilePage(driver).userAccountPreview().checkOrderOverview();
-    }
-
-    @Test
     public void createOrderPositiveTest() {
 
         new HomePage(driver).selectCategory();

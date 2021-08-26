@@ -3,6 +3,7 @@ package oscar.pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import oscar.tests.ProfilePageTests;
 
 public class OrderHistoryPage extends PageBase {
     public OrderHistoryPage(WebDriver driver) {
@@ -21,13 +22,7 @@ public class OrderHistoryPage extends PageBase {
     public boolean isOrdersSummaryMessageDisplayed() {
         return ordersSummary.isDisplayed();
     }
-    @FindBy(css = ".col-xs-6:nth-child(3) h3 > a")
-    WebElement bookToBeAddedToBasket;
 
-    public OrderHistoryPage goToBookDescription() {
-        bookToBeAddedToBasket.click();
-        return new OrderHistoryPage(driver);
-    }
     @FindBy(xpath = "//h1[contains(text(),'Coders at Work')]")
     WebElement bookName;
 
@@ -62,5 +57,12 @@ public class OrderHistoryPage extends PageBase {
     public OrderHistoryPage addBookToWishList() {
         addToWishListBtn.click();
         return this;
+    }
+    @FindBy(css = ".col-xs-6:nth-child(3) h3 > a")
+    WebElement bookToBeAddedToBasket;
+
+    public OrderHistoryPage goToBookDescription() {
+        bookToBeAddedToBasket.click();
+        return new OrderHistoryPage(driver);
     }
 }

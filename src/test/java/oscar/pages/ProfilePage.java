@@ -67,11 +67,11 @@ public class ProfilePage extends PageBase {
         return this;
     }
 
-    @FindBy(xpath = "//td[contains(text(),'Sidorov@abc.de')]")
+    @FindBy(xpath = "//td[contains(text(),'Sidorov@mail.ru')]")
     WebElement userEmail;
 
-    public String getUserEmail() {
-        return userEmail.getText();
+    public boolean isUserEmailEqualText(String text) {
+        return userEmail.getText().contains(text);
     }
 
     @FindBy(xpath = "//a[contains(text(),'Passwort ändern')]")
