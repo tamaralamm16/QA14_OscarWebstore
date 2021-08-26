@@ -1,5 +1,0 @@
-10:10:09.130 [main] INFO  oscar.tests.TestBase - Start test: newUserRegistrationPositiveTest
-10:10:26.004 [main] ERROR oscar.tests.TestBase - Test result: FAILED
-ru.yandex.qatools.ashot.Screenshot@43826ec
-10:10:26.005 [main] INFO  oscar.tests.TestBase - Stop test: null
-10:10:26.005 [main] INFO  oscar.tests.TestBase - *****************************

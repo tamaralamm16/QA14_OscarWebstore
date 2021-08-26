@@ -60,7 +60,7 @@ public class PageBase {
     }
 
     public Screenshot takeScreenShotWithScrollDown() {
-        Screenshot screenshot = new AShot().shootingStrategy(ShootingStrategies.viewportPasting(1000))
+        Screenshot screenshot = new AShot().shootingStrategy(ShootingStrategies.viewportPasting(ShootingStrategies.scaling(1.25f),1000))
                 .takeScreenshot(driver);
         try {
             ImageIO.write(screenshot.getImage(), "PNG", new File("screenshot/screen" + System.currentTimeMillis() + ".png"));

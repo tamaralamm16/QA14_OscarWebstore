@@ -11,12 +11,12 @@ public class OrderHistoryTest extends TestBase {
     @BeforeMethod
     public void precondition() {
         new HomePage(driver).clickOnLoginOrRegisterBtn();
-        new RegisterPage(driver).fillLoginForm("Kuznetsov3@mail.ru", "Kuz35512$%");
+        new RegisterPage(driver).fillLoginForm("Sidorov@mail.ru", "Sidor12345$");
     }
 
     @Test
     public void existedUserSelectProductTest() {
-        new RegisterPage(driver).fillLoginForm("Kuznetsov3@mail.ru", "Kuz35512$%");
+        new RegisterPage(driver).fillLoginForm("Kuznetsov9@mail.ru", "Kuz95512$%");
         Assert.assertTrue(new HomePage(driver).isWillkomenMessageAppears());
         new HomePage(driver).selectCategory();
         new OrderHistoryPage(driver).goToBookDescription();
@@ -37,7 +37,7 @@ public class OrderHistoryTest extends TestBase {
         new HomePage(driver).selectCategory();
         new OrderHistoryPage(driver).addTheBookToBasket().goToBasketView()
                 .proceedToBuyBook();
-        new ShippingAddressPage(driver).fillPersonalDate("Ivan", "Kuznetsov")
+        new ShippingAddressPage(driver).fillPersonalDate("Sidor", "Sidorov")
                 .fillAddress("Otto-Grot-Strasse-50", "Hamburg", "21031")
                 .selectCountry("Germany").clickOnContinueButton();
         new PaymentPage(driver).clickOnSubmitButton();

@@ -37,4 +37,5 @@ public class HomePage extends  PageBase {
     public boolean isErrorMessageAppears() {
         return errorMessage.isDisplayed();
     }
+
 }

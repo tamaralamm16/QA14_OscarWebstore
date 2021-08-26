@@ -33,7 +33,7 @@ public class RegisterPageTests extends TestBase {
     }
     @Test
     public void newUserRegistrationPositiveTest() {
-        new RegisterPage(driver).fillRegisterForm("Kuznetsov6@mail.ru", "Kuz65512$%", "Kuz65512$%");
+        new RegisterPage(driver).fillRegisterForm("Sidorov@mail.ru", "Sidor12345$", "Sidor12345$");
         new RegisterPage(driver).isWelcomeMessageDisplayed();
 
     }

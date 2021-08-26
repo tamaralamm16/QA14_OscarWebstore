@@ -56,7 +56,11 @@ public class OrderHistoryPage extends PageBase {
         clickWithAction(proceedToCheckOut, 0, 700);
         return this;
     }
+    @FindBy(xpath = "//a[contains(text(),'Zu Wunschzettel hinzufügen')]")
+    WebElement addToWishListBtn;
 
-
-
+    public OrderHistoryPage addBookToWishList() {
+        addToWishListBtn.click();
+        return this;
+    }
 }

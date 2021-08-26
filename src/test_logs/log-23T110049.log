@@ -1,5 +1,0 @@
-11:00:52.218 [main] INFO  oscar.tests.TestBase - Start test: existedUserSelectProductTest
-11:01:06.927 [main] ERROR oscar.tests.TestBase - Test result: FAILED
-ru.yandex.qatools.ashot.Screenshot@68809cc7
-11:01:06.927 [main] INFO  oscar.tests.TestBase - Stop test: null
-11:01:06.927 [main] INFO  oscar.tests.TestBase - *****************************
