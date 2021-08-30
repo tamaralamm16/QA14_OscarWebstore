@@ -26,27 +26,33 @@ public class OrderOverviewPage extends PageBase {
         return new HomePage(driver);
     }
 
-    @FindBy(css = "strong")
+    @FindBy(xpath = "//a[contains(text(),'Coders at Work')]")
     WebElement orderHeader;
 
     public String getOrderNumber() {
         return orderHeader.getText();
 
     }
-    @FindBy(xpath = "//a[.='Einkauf fortsetzen']")
+    @FindBy(xpath = "//button[@id='place-order']")
     WebElement continueBtn;
 
     public OrderOverviewPage clickOnContinueOrder() {
-        continueBtn.click();
+       clickWithAction(continueBtn, 0, 1000);
         return this;
     }
-    @FindBy(css = "tr:nth-child(2)  a")
+    @FindBy(xpath = "//body/div[1]/div[1]/div[2]")
     WebElement orderNumber;
 
     public String getOrderNumber2() {
         return orderNumber.getText();
     }
 
+    @FindBy(id = "view_preview")
+    WebElement submitBtn;
 
+    public OrderOverviewPage providePaymentInformation() {
+        submitBtn.click();
+        return this;
+    }
 }
 

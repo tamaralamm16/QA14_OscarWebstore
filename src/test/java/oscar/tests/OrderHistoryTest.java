@@ -1,6 +1,5 @@
 package oscar.tests;
 
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -14,17 +13,15 @@ public class OrderHistoryTest extends TestBase {
         new RegisterPage(driver).fillLoginForm("Sidorov@mail.ru", "Sidor12345$");
     }
 
-    @Test
+    @Test(priority = 1, groups = {"functional"})
     public void createOrderPositiveTest() {
 
         new HomePage(driver).selectCategory();
         new OrderHistoryPage(driver).addTheBookToBasket().goToBasketView()
                 .proceedToBuyBook();
-        new ShippingAddressPage(driver).fillPersonalDate("Sidor", "Sidorov")
-                .fillAddress("Otto-Grot-Strasse-50", "Hamburg", "21031")
-                .selectCountry("Germany").clickOnContinueButton();
-        new PaymentPage(driver).clickOnSubmitButton();
-        new OrderOverviewPage(driver).orderSubmit();
+        new ShippingAddressPage(driver).fillAddressFormFromShippingPage("Sidor", "Sidorov",
+                "Otto-Grot-Strasse-50", "Hamburg", "21031", "Germany");
+        new OrderOverviewPage(driver).providePaymentInformation();
 
         String orderNumber;
         orderNumber = new OrderOverviewPage(driver).getOrderNumber();
@@ -38,6 +35,19 @@ public class OrderHistoryTest extends TestBase {
         orderNumber2 = new OrderOverviewPage(driver).getOrderNumber2();
         System.out.println(orderNumber2);
 
+    }
+    @Test(priority = 2, groups = {"functional"})
+    public void createOrderNegativeTest() {
+
+        new HomePage(driver).selectCategory();
+        new OrderHistoryPage(driver).addTheBookToBasket().goToBasketView()
+                .proceedToBuyBook();
+        new ShippingAddressPage(driver).fillAddressFormFromShippingPage("%", "%", "Otto-Grot-Strasse-50",
+                "Hamburg", "21031", "Germany");
+
+        new OrderOverviewPage(driver).providePaymentInformation();
+
+        Assert.assertTrue(new ProfilePage(driver).isAddressContainsSpecialSymbol("%"));
     }
 }
 

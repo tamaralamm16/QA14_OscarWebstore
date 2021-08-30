@@ -1,8 +1,0 @@
-13:21:16.712 [main] INFO  oscar.tests.TestBase - Start test: newUserRegistrationPositiveTest
-13:21:25.614 [main] INFO  oscar.tests.TestBase - Start test: existedUserChangePasswordTest
-13:21:34.684 [main] INFO  oscar.tests.TestBase - Start test: editProfileTest
-13:21:44.353 [main] INFO  oscar.tests.TestBase - Start test: addressBookTest
-13:21:53.010 [main] INFO  oscar.tests.TestBase - Start test: addressBookTestNegativeTestWithWrongCountry
-13:22:01.636 [main] INFO  oscar.tests.TestBase - Start test: createWishListsTest
-13:22:09.463 [main] INFO  oscar.tests.TestBase - Start test: addBookToWishList
-13:22:26.528 [main] INFO  oscar.tests.TestBase - Start test: deleteProfileTest

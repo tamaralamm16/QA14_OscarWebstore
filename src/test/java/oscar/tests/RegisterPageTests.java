@@ -26,23 +26,23 @@ public class RegisterPageTests extends TestBase {
         new RegisterPage(driver).fillRegisterForm("IvanIvanov@gmail.com", password, password);
         Assert.assertTrue(new RegisterPage(driver).isRegisterFormDisplayed());
     }
-    @Test
+    @Test(priority = 3, groups = {"functional"})
     public void newUserRegistrationWithTheExistingUser() {
-        new RegisterPage(driver).fillRegisterForm("PPetrov@gmail.com", "PpOscar14$%", "PpOscar14$%");
+        new RegisterPage(driver).fillRegisterForm("Sidorov@mail.ru", "Sidor12345$", "Sidor12345$");
         new RegisterPage(driver).isErrorMessageDisplayed();
     }
-    @Test
+    @Test(priority = 2, groups = {"functional"})
     public void newUserRegistrationPositiveTest() {
         new RegisterPage(driver).fillRegisterForm("Sidorov@mail.ru", "Sidor12345$", "Sidor12345$");
         new RegisterPage(driver).isWelcomeMessageDisplayed();
 
     }
-    @Test
+    @Test(priority = 1, groups = {"functional"})
     public void deleteNeuRegisteredUserTest() {
-        new RegisterPage(driver).fillRegisterForm("Kuznetsov7@mail.ru", "Kuz75512$%", "Kuz75512$%")
+        new RegisterPage(driver).fillRegisterForm("Sidorov@mail.ru", "Sidor12345$", "Sidor12345$")
        .goToUserAccount();
         Assert.assertTrue(new ProfilePage(driver).isProfilePageDisplayed());
-        new ProfilePage(driver).deleteProfile().confirmDeleteUser("Kuz75512$%");
+        new ProfilePage(driver).deleteProfile().confirmDeleteUser("Sidor12345$");
     }
 
  @Test(dataProviderClass = DataProviders.class, dataProvider = "registerUsersToBeDeleted")

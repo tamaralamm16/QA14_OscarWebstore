@@ -3,10 +3,6 @@ package oscar.pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.Select;
-import org.testng.annotations.Test;
-
-import java.util.List;
 
 public class ShippingAddressPage extends PageBase {
     public ShippingAddressPage(WebDriver driver) {
@@ -39,34 +35,12 @@ public class ShippingAddressPage extends PageBase {
     @FindBy(xpath = "//button[contains(text(),'Weiter')]")
     WebElement submit;
 
-    public ShippingAddressPage fillPersonalDate(String firstName, String lastName) {
-        type(fname, firstName);
-        type(lname, lastName);
-        return this;
-    }
-
-    public ShippingAddressPage fillAddress(String street, String cityName, String postCode) {
-        type(fline, street);
-        type(city, cityName);
-        type(zip, postCode);
-        return this;
-    }
-
-    public ShippingAddressPage selectCountry(String country) {
-        Select select = new Select(countryId);
-        select.selectByVisibleText(country);
-
-        List<WebElement> options = select.getOptions();
-        System.out.println(select.getFirstSelectedOption().getText());
-
-       //for (int i = 0; i < options.size(); i++) {
-        //   System.out.println(options.get(i).getText());
-     //  }
-        return this;
-    }
-
-    public PaymentPage clickOnContinueButton() {
+    public ShippingAddressPage fillAddressFormFromShippingPage(String firstName, String lastName,
+                                                               String street, String cityName, String postCode,
+                                                               String country) {
+        fillAddressForm(fname, firstName, lname, lastName, fline, street, city, cityName, zip, postCode, countryId, country);
         submit.click();
-        return new PaymentPage(driver);
+        return this;
+
     }
 }

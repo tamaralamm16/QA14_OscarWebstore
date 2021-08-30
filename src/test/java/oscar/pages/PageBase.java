@@ -11,6 +11,7 @@ import ru.yandex.qatools.ashot.shooting.ShootingStrategies;
 import javax.imageio.ImageIO;
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
 
 public class PageBase {
     protected WebDriver driver;
@@ -69,6 +70,20 @@ public class PageBase {
             e.printStackTrace();
         }
         return screenshot;
+    }
+
+    public void fillAddressForm(WebElement fname,String firstName, WebElement lname, String lastName, WebElement fline, String street,
+                                WebElement city,String cityName, WebElement zip, String postCode, WebElement countryId, String country){
+        type(fname, firstName);
+        type(lname, lastName);
+        type(fline, street);
+        type(city, cityName);
+        type(zip, postCode);
+        Select select = new Select(countryId);
+        select.selectByVisibleText(country);
+
+        List<WebElement> options = select.getOptions();
+        System.out.println(select.getFirstSelectedOption().getText());
     }
 
 }

@@ -1,0 +1,7 @@
+22:28:52.816 [main] INFO  oscar.tests.TestBase - Start test: homePageHeaderVisibilityTest
+22:28:55.704 [main] INFO  oscar.tests.TestBase - Start test: allProductsCategoryVisibilityTest
+22:28:59.270 [main] INFO  oscar.tests.TestBase - Start test: clothingCategoryVisibilityTest
+22:29:02.574 [main] INFO  oscar.tests.TestBase - Start test: booksCategoryVisibilityTest
+22:29:06.299 [main] INFO  oscar.tests.TestBase - Start test: offersCategoryVisibilityTest
+22:29:11.129 [main] INFO  oscar.tests.TestBase - Start test: accountVisibilityTestForRegisteredUser
+22:29:17.203 [main] INFO  oscar.tests.TestBase - Start test: logoutTestForRegisteredUser

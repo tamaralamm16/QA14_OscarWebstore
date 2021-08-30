@@ -44,8 +44,8 @@ public class ProfilePageTests extends TestBase {
     public void addressBookTest() {
         new RegisterPage(driver).fillLoginForm("Anna1@mail.ru", "Anna112345$");
         new ProfilePage(driver).userAccountPreview().goToAddressBook().addNewAddress()
-                .fillAddressForm("Anna", "Sidorova", "Tungerstraße-20", "Erfurt", "99099")
-                .selectCountryFromAddressForm("Germany").submitAddress()
+                .fillAddressFormFromProfilePage("Anna", "Sidorova", "Tungerstraße-20",
+                        "Erfurt", "99099", "Germany")
                 .isAddressContainsText("Erfurt");
     }
 
@@ -53,8 +53,7 @@ public class ProfilePageTests extends TestBase {
     public void addressBookTestNegativeTestWithWrongCountry() {
         new RegisterPage(driver).fillLoginForm("Anna1@mail.ru", "Anna112345$");
         new ProfilePage(driver).userAccountPreview().goToAddressBook().addNewAddress()
-                .fillAddressForm("Anna", "Sidorova", "Tungerstraße-20", "Erfurt", "99099")
-                .selectCountryFromAddressForm("Canada").submitAddress()
+                .fillAddressFormFromProfilePage("Anna", "Sidorova", "Tungerstraße-20", "Erfurt", "99099","Canada")
                 .isErrorMessageAppears();
     }
 

@@ -51,7 +51,7 @@ public class ProfilePage extends PageBase {
         return this;
     }
 
-    @FindBy(css = ".icon-user")
+    @FindBy(css = ".navbar-right > li:nth-child(1) > a")
     WebElement iconUser;
 
     public ProfilePage userAccountPreview() {
@@ -201,46 +201,32 @@ public class ProfilePage extends PageBase {
         return this;
     }
     @FindBy(id = "id_first_name")
-    WebElement fNameFromAddress;
+    WebElement fname;
 
     @FindBy(id = "id_last_name")
-    WebElement sNameFromAddress;
+    WebElement lname;
 
     @FindBy(id = "id_line1")
-    WebElement line1;
+    WebElement fline;
 
     @FindBy(id = "id_line4")
     WebElement city;
 
     @FindBy(id = "id_postcode")
-    WebElement postcode;
+    WebElement zip;
 
-    public ProfilePage fillAddressForm(String fName, String sName, String firstLine, String cityName, String plz) {
-        type(fNameFromAddress, fName);
-        type(sNameFromAddress, sName);
-        type(line1, firstLine);
-        type(city, cityName);
-        type(postcode, plz);
-        return this;
-    }
     @FindBy(id = "id_country")
-    WebElement choosedCountry;
+    WebElement countryId;
 
-    public ProfilePage selectCountryFromAddressForm(String country) {
-        Select select = new Select(choosedCountry);
-        select.selectByVisibleText(country);
-
-        List<WebElement> options = select.getOptions();
-        System.out.println(select.getFirstSelectedOption().getText());
-        return this;
-    }
     @FindBy (xpath = "//button[contains(text(),'Sichern')]")
     WebElement confirmAddress;
 
-    public ProfilePage submitAddress() {
+    public ProfilePage fillAddressFormFromProfilePage(String firstName, String lastName, String street, String cityName, String postCode, String country) {
+        fillAddressForm(fname, firstName, lname, lastName, fline, street, city, cityName, zip, postCode, countryId, country );
         confirmAddress.click();
         return this;
     }
+
     @FindBy(xpath = "//tbody/tr[2]/td[1]/address[1]")
     WebElement address;
 
@@ -287,5 +273,29 @@ public class ProfilePage extends PageBase {
     public boolean isWishListNameAppears(String text) {
         return nameOfWishList.isDisplayed();
     }
+    @FindBy (xpath = "//address")
+    WebElement addressField;
+
+    public boolean isAddressContainsSpecialSymbol(String s) {
+        return addressField.isDisplayed();
+    }
+
+    public boolean isContainsTextForIcon() {
+       return iconUser.isDisplayed();
+    }
+    @FindBy(xpath = "//a[@id='logout_link']")
+    WebElement logout;
+
+    public ProfilePage isUserCanLogout() {
+        logout.click();
+        return this;
+    }
+    @FindBy(xpath = "//a[@id='login_link']")
+    WebElement login;
+
+    public boolean isLoginLinkAppears() {
+        return login.isDisplayed();
+    }
+
 }
 

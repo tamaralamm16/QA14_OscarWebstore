@@ -70,4 +70,10 @@ public class RegisterPage extends PageBase {
         loginSubmit.click();
         return this;
     }
+    public RegisterPage isAccountIconClickable() {
+        account.click();
+        return this;
+    }
+
+
 }

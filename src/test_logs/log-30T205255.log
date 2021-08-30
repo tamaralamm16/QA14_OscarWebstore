@@ -1,0 +1,6 @@
+20:52:58.822 [main] INFO  oscar.tests.TestBase - Start test: userCanSelectProductMenuTest
+20:53:02.308 [main] INFO  oscar.tests.TestBase - Start test: homePageHeaderVisibilityTest
+20:53:05.113 [main] INFO  oscar.tests.TestBase - Start test: allProductsCategoryVisibilityTest
+20:53:08.811 [main] INFO  oscar.tests.TestBase - Start test: clothingCategoryVisibilityTest
+20:53:12.196 [main] INFO  oscar.tests.TestBase - Start test: booksCategoryVisibilityTest
+20:53:15.931 [main] INFO  oscar.tests.TestBase - Start test: offersCategoryVisibilityTest
