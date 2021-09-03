@@ -1,0 +1,4 @@
+14:32:30.202 [main] INFO  oscar.tests.TestBase - Start test: isSearchBtnClickable
+14:32:30.890 [main] INFO  oscar.tests.TestBase - Test result: PASSED
+14:32:30.891 [main] INFO  oscar.tests.TestBase - Stop test: null
+14:32:30.891 [main] INFO  oscar.tests.TestBase - *****************************

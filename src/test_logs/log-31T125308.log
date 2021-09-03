@@ -1,0 +1,4 @@
+12:53:11.524 [main] INFO  oscar.tests.TestBase - Start test: isBasketViewVisible
+12:53:12.071 [main] INFO  oscar.tests.TestBase - Test result: PASSED
+12:53:12.072 [main] INFO  oscar.tests.TestBase - Stop test: null
+12:53:12.072 [main] INFO  oscar.tests.TestBase - *****************************

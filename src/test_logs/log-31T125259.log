@@ -1,0 +1,4 @@
+12:53:01.826 [main] INFO  oscar.tests.TestBase - Start test: accountVisibilityTestForUnregisteredUser
+12:53:02.547 [main] INFO  oscar.tests.TestBase - Test result: PASSED
+12:53:02.548 [main] INFO  oscar.tests.TestBase - Stop test: null
+12:53:02.549 [main] INFO  oscar.tests.TestBase - *****************************

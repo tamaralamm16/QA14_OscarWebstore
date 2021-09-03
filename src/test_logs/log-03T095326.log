@@ -1,0 +1,4 @@
+09:53:29.904 [main] INFO  oscar.tests.TestBase - Start test: verifyIfPaginationWorks
+09:53:35.290 [main] INFO  oscar.tests.TestBase - Start test: verifyIfPaginationWorksBack
+09:53:40.863 [main] INFO  oscar.tests.TestBase - Start test: verifyIfUserCanReturnToHomePage
+09:53:46.488 [main] INFO  oscar.tests.TestBase - Start test: verifyCorrectBookName

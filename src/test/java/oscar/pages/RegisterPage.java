@@ -74,6 +74,13 @@ public class RegisterPage extends PageBase {
         account.click();
         return this;
     }
+    @FindBy(xpath = "//form[@id='is']")
+    WebElement registerFormField;
 
+    public boolean isRegisteredFormAppears() {
+        return registerFormField.isDisplayed();
+    }
+    @FindBy(id = "register_form")
+    WebElement loginHeader;
 
 }

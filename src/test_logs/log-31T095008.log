@@ -1,0 +1,5 @@
+09:50:11.677 [main] INFO  oscar.tests.TestBase - Start test: createOrderPositiveTest
+09:50:38.242 [main] ERROR oscar.tests.TestBase - Test result: FAILED
+ru.yandex.qatools.ashot.Screenshot@2d000e80
+09:50:38.242 [main] INFO  oscar.tests.TestBase - Stop test: null
+09:50:38.242 [main] INFO  oscar.tests.TestBase - *****************************

@@ -1,0 +1,5 @@
+09:53:16.324 [main] INFO  oscar.tests.TestBase - Start test: createOrderPositiveTest
+09:53:37.144 [main] ERROR oscar.tests.TestBase - Test result: FAILED
+C:\Users\tamri\GitHub\QA14_OscarWebstore\screenshot\screen1630396417131.png
+09:53:37.144 [main] INFO  oscar.tests.TestBase - Stop test: null
+09:53:37.144 [main] INFO  oscar.tests.TestBase - *****************************

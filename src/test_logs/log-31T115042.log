@@ -1,0 +1,5 @@
+11:50:45.239 [main] INFO  oscar.tests.TestBase - Start test: accountVisibilityTestForUnregisteredUser
+11:50:46.225 [main] ERROR oscar.tests.TestBase - Test result: FAILED
+C:\Users\tamri\GitHub\QA14_OscarWebstore\screenshot\screen1630403446215.png
+11:50:46.225 [main] INFO  oscar.tests.TestBase - Stop test: null
+11:50:46.225 [main] INFO  oscar.tests.TestBase - *****************************

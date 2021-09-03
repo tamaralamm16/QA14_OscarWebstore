@@ -65,4 +65,11 @@ public class OrderHistoryPage extends PageBase {
         bookToBeAddedToBasket.click();
         return new OrderHistoryPage(driver);
     }
+    @FindBy(id = "add_to_basket_form")
+    WebElement submit;
+
+    public OrderHistoryPage submit() {
+        submit.click();
+        return this;
+    }
 }

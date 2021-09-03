@@ -3,6 +3,8 @@ package oscar.pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class HomePage extends  PageBase {
     public HomePage(WebDriver driver) {
@@ -101,6 +103,31 @@ public class HomePage extends  PageBase {
 
     public HomePage goToHomePageName() {
         homePageName.click();
+        return this;
+    }
+    @FindBy(xpath = "//a[@id='login_link']")
+    WebElement login;
+
+    public RegisterPage isLoginPageAppears() {
+        login.click();
+        return new RegisterPage(driver);
+    }
+    @FindBy(css = ".navbar-right > .btn")
+    WebElement searchBtn;
+
+    public boolean isSearchBtnClickable() {
+        searchBtn.click();
+        return isElementClickable(searchBtn, 10);
+    }
+
+    public boolean isLoginOrRegisterPageDisplayed() {
+    return loginLink.isDisplayed();
+    }
+    @FindBy(css = ".dropdown-submenu")
+    WebElement booksCategory;
+
+    public HomePage selectAllProducts() {
+        booksCategory.click();
         return this;
     }
 }

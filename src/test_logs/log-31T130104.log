@@ -1,0 +1,5 @@
+13:01:07.040 [main] INFO  oscar.tests.TestBase - Start test: isBasketViewVisible
+13:01:17.517 [main] ERROR oscar.tests.TestBase - Test result: FAILED
+C:\Users\tamri\GitHub\QA14_OscarWebstore\screenshot\screen1630407677502.png
+13:01:17.517 [main] INFO  oscar.tests.TestBase - Stop test: null
+13:01:17.517 [main] INFO  oscar.tests.TestBase - *****************************

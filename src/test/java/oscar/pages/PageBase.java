@@ -3,7 +3,9 @@ package oscar.pages;
 import com.google.common.io.Files;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import ru.yandex.qatools.ashot.AShot;
 import ru.yandex.qatools.ashot.Screenshot;
 import ru.yandex.qatools.ashot.shooting.ShootingStrategies;
@@ -61,19 +63,19 @@ public class PageBase {
     }
 
     public Screenshot takeScreenShotWithScrollDown() {
-        Screenshot screenshot = new AShot().shootingStrategy(ShootingStrategies.viewportPasting(ShootingStrategies.scaling(1.25f),1000))
+        Screenshot screenshot = new AShot().shootingStrategy(ShootingStrategies.viewportPasting(ShootingStrategies.scaling(1.25f), 1000))
                 .takeScreenshot(driver);
         try {
             ImageIO.write(screenshot.getImage(), "PNG", new File("screenshot/screen" + System.currentTimeMillis() + ".png"));
 
-        }catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
         return screenshot;
     }
 
-    public void fillAddressForm(WebElement fname,String firstName, WebElement lname, String lastName, WebElement fline, String street,
-                                WebElement city,String cityName, WebElement zip, String postCode, WebElement countryId, String country){
+    public void fillAddressForm(WebElement fname, String firstName, WebElement lname, String lastName, WebElement fline, String street,
+                                WebElement city, String cityName, WebElement zip, String postCode, WebElement countryId, String country) {
         type(fname, firstName);
         type(lname, lastName);
         type(fline, street);
@@ -86,4 +88,13 @@ public class PageBase {
         System.out.println(select.getFirstSelectedOption().getText());
     }
 
+    public boolean isElementClickable(WebElement element, int time) {
+        try {
+            new WebDriverWait(driver, time).until(ExpectedConditions.elementToBeClickable(element));
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
 }

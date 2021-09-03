@@ -3,6 +3,9 @@ package oscar.tests;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.BrowserType;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.ITestResult;
@@ -16,6 +19,7 @@ import java.util.concurrent.TimeUnit;
 
 public class TestBase {
     WebDriver driver;
+    String browser;
 
     Logger logger = LoggerFactory.getLogger(TestBase.class);
 
@@ -31,9 +35,18 @@ public class TestBase {
 
     @BeforeMethod(alwaysRun = false)
     public void setUp() {
-        driver = new ChromeDriver();
+        ChromeOptions options = new ChromeOptions();
+//        options.addArguments("headless");
+//        options.addArguments("window-size=1200x800");
+//        if(browser.equals(BrowserType.CHROME)) {
+//            driver = new ChromeDriver(options);
+//        }else if(browser.equals(BrowserType.FIREFOX)) {
+//            driver = new FirefoxDriver(options);
+//        }
+        driver = new ChromeDriver(options);
         driver.manage().window().maximize();
-        driver.get("http://selenium1py.pythonanywhere.com/en-gb/");
+//        driver.manage().window().setSize(new Dimension(1920, 1000));
+        driver.get("http://selenium1py.pythonanywhere.com/de");
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 
@@ -43,7 +56,9 @@ public class TestBase {
         if(result.isSuccess()) {
             logger.info("Test result: PASSED");
         }else {
-            logger.error("Test result: FAILED" + "\n" + new PageBase(driver).takeScreenShotWithScrollDown());
+            logger.error("Test result: FAILED" + "\n" + new PageBase(driver)
+                    //.takeScreenShotWithScrollDown());
+                    .takeScreenshot());
         }
         logger.info("Stop test: "+ result.getTestName());
         logger.info("*****************************");
