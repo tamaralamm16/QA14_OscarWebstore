@@ -79,4 +79,17 @@ public class ProductPageTests extends TestBase {
         Assert.assertTrue(new ProductPage(driver).verifyBookNameFromBasket().contains("Google Hacking"));
 
     }
+    @Test
+    public void compareTitleItemNameTest() {
+        new HomePage(driver).selectAllProducts();
+        new ProductPage(driver).selectBookFromFiction();
+
+        String itemName = new ProductPage(driver).getItemNameFromList(5);
+        System.out.println(itemName);
+        new ProductPage(driver).clickOnItemName(5);
+        String itemName1 = new ProductPage(driver).getItemName();
+        System.out.println(itemName1);
+
+        Assert.assertEquals(itemName, itemName1);
+    }
 }

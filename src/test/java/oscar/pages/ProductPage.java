@@ -1,10 +1,12 @@
 package oscar.pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import java.util.Collection;
+import java.util.List;
 
 public class ProductPage extends PageBase {
     public ProductPage(WebDriver driver) {
@@ -138,4 +140,103 @@ public class ProductPage extends PageBase {
     public String verifyBookNameFromBasket() {
         return bookNameFromBasket.getText();
     }
+    @FindBy(css = ".col-xs-6:nth-child(1) h3 > a")
+    WebElement itemTitle;
+
+    public String getItemNameFromList(int number) {
+        return driver.findElement(By.cssSelector(".col-xs-6:nth-child("+ number +") h3 > a"))
+                .getText();
+    }
+
+    @FindBy(css = "h1")
+    WebElement productTitle;
+
+    public ProductPage clickOnItemName(int num) {
+        driver.findElement(By.cssSelector(".col-xs-6:nth-child("+ num +") h3 > a")).click();
+        return this;
+    }
+
+    public String getItemName() {
+        return productTitle.getText();
+    }
+    @FindBy(css = ".nav-list > li > ul > li:nth-child(1) > a")
+    WebElement fiction;
+
+    public ProductPage selectBookFromFiction() {
+        fiction.click();
+        return this;
+    }
+    @FindBy(css = ".basket-items:nth-child(6) :nth-child(4)")
+    WebElement priseForOne;
+
+    public double getPriseForOne() {
+        double number1 = Double.parseDouble(priseForOne.getText().replace("£", "")
+                .replace(",", "."));
+        return number1;
+        }
+
+    @FindBy(css = ".basket-items:nth-child(6) :nth-child(5)")
+    WebElement totalPrise;
+
+    public double getTotalPrise() {
+        double number2 = Double.parseDouble(totalPrise.getText().replace("£", "")
+        .replace(",", "."));
+        return number2;
+    }
+    @FindBy(xpath = "//input[@id='id_form-0-quantity']")
+    WebElement amount;
+
+    public int getAmount() {
+        int number3 = Integer.parseInt(amount.getText());
+        return number3;
+    }
+    @FindBy(css = ".col-xs-6:nth-child(1) .btn")
+    WebElement addToBasket;
+
+    public ProductPage addItemToBasket(int number) {
+        driver.findElement(By.cssSelector(".col-xs-6:nth-child(" + number + ") .btn")).click();
+        return this;
+    }
+
+    public ProductPage clickOnViewBasketBtn() {
+        basketViewBtn.click();
+        return this;
+    }
+
+    @FindBy(xpath = "//a[.='View basket']")
+    WebElement basketViewBtn;
+
+    @FindBy(id = "id_form-0-quantity")
+    WebElement quantity;
+
+    @FindBy(css = ".input-group-btn .btn")
+    WebElement updateQuantity;
+
+    @FindBy(css = ".col-sm-2 .price_color")
+    WebElement price;
+
+    public double getPrice() {
+        double num = Double.parseDouble(price.getText().replace("£", "")
+                .replace(",", "."));
+        return num;
+    }
+
+    public ProductPage fillQuantityField(String n) {
+        type(quantity, n);
+        updateQuantity.click();
+        return this;
+    }
+
+    @FindBy(css = ".basket-items")
+    List<WebElement> itemList;
+
+    public int getItemCountList() {
+        int countOfItem = itemList.size();
+        System.out.println(countOfItem);
+//        for(int i = 0; i < countOfItem; i++) {
+//            WebElement itemResultList = itemList.get(i);
+//        }
+        return countOfItem;
+    }
 }
+

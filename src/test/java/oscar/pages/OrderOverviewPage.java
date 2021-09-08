@@ -54,5 +54,29 @@ public class OrderOverviewPage extends PageBase {
         submitBtn.click();
         return this;
     }
+    @FindBy(xpath = "//a[contains(text(),'Bestellung bearbeiten')]")
+    WebElement editOrderBtn;
+
+    public OrderOverviewPage clickEditOrder() {
+        editOrderBtn.click();
+        return this;
+    }
+    @FindBy(xpath = "//input[@id='id_form-0-quantity']")
+    WebElement quantityBtn;
+
+    @FindBy(xpath = "//button[contains(text(),'Aktualisieren')]")
+    WebElement updateBtn;
+
+    public OrderOverviewPage fillQuantityField(String quantity) {
+        type(quantityBtn, quantity);
+        updateBtn.click();
+        return null;
+    }
+    @FindBy(xpath = "//p[contains(text(),'Ihr Warenkorb ist leer')]")
+    WebElement basketOverview;
+
+    public boolean isBasketOverviewDisplayed() {
+        return basketOverview.isDisplayed();
+    }
 }
 
