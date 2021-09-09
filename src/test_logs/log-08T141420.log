@@ -1,0 +1,17 @@
+14:14:24.832 [TestNG-test=Regression-2] INFO  oscar.tests.TestBase - Start test: verifyIfTotalAmountChangedAfterUpdate
+14:14:24.970 [TestNG-test=Regression-3] INFO  oscar.tests.TestBase - Start test: homePageHeaderVisibilityTest
+14:14:24.996 [TestNG-test=Regression-1] INFO  oscar.tests.TestBase - Start test: compareTitleItemNameTest
+14:14:28.603 [TestNG-test=Regression-3] INFO  oscar.tests.TestBase - Start test: clothingCategoryVisibilityTest
+14:14:31.353 [TestNG-test=Regression-1] INFO  oscar.tests.TestBase - Start test: verifyIfPaginationWorks
+14:14:34.092 [TestNG-test=Regression-3] INFO  oscar.tests.TestBase - Start test: booksCategoryVisibilityTest
+14:14:38.286 [TestNG-test=Regression-1] INFO  oscar.tests.TestBase - Start test: verifyIfPaginationWorksBack
+14:14:39.471 [TestNG-test=Regression-3] INFO  oscar.tests.TestBase - Start test: accountVisibilityTestForRegisteredUser
+14:14:41.826 [TestNG-test=Regression-2] INFO  oscar.tests.TestBase - Start test: verifyIfTotalSumIsCorrect
+14:14:46.978 [TestNG-test=Regression-1] INFO  oscar.tests.TestBase - Start test: verifyIfUserCanReturnToHomePage
+14:14:50.494 [TestNG-test=Regression-3] INFO  oscar.tests.TestBase - Start test: accountVisibilityTestForUnregisteredUser
+14:14:54.847 [TestNG-test=Regression-3] INFO  oscar.tests.TestBase - Start test: isSearchBtnFunctional
+14:14:55.918 [TestNG-test=Regression-1] INFO  oscar.tests.TestBase - Start test: verifyCorrectBookName
+14:15:08.172 [TestNG-test=Regression-3] INFO  oscar.tests.TestBase - Start test: loginExistedUserNegativeTestWithWrongEmail
+14:15:12.877 [TestNG-test=Regression-1] INFO  oscar.tests.TestBase - Start test: verifyIfUnregisteredUserCanByProduct
+14:15:15.270 [TestNG-test=Regression-3] INFO  oscar.tests.TestBase - Start test: loginExistedUserNegativeTestWithWrongPassword
+14:15:21.688 [TestNG-test=Regression-1] INFO  oscar.tests.TestBase - Start test: verifyIfAddToBasketWorksForAllProduct

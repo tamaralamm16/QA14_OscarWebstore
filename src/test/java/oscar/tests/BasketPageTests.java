@@ -36,13 +36,13 @@ public class BasketPageTests extends TestBase {
         priceForOne = new ProductPage(driver).getPriseForOne();
         System.out.println(priceForOne);
 
+        new ProductPage(driver).fillQuantityField("2");
+
         double totalPrise;
         totalPrise = new ProductPage(driver).getTotalPrise();
         System.out.println(totalPrise);
 
-        new ProductPage(driver).fillQuantityField("4");
-
-        Assert.assertEquals(totalPrise, priceForOne * 4);
+        Assert.assertEquals(totalPrise, priceForOne * 2);
     }
 
 //    @Test

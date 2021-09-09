@@ -3,13 +3,30 @@
 <suite name="Regression" parallel="classes" thread-count="3">
     <test name="Regression">
 
+
+        <parameter name="browser" value = "Chrome"></parameter>
         <classes>
-            <class name="oscar.tests.LoginPageTests"/>
+            <class name="oscar.tests.LoginPageTests">
+                <methods>
+                    <exclude name="checkEmailInUserProfile" />
+                </methods>
+            </class>
             <class name="oscar.tests.ProductPageTests"/>
-            <class name="oscar.tests.ProfilePageTests"/>
+            <class name="oscar.tests.BasketPageTests">
+            <methods>
+                <exclude name="verifyIfTotalSumIsCorrect" />
+            </methods>
+            </class>
+            <class name="oscar.tests.HomePageTests">
+            <methods>
+
+                <exclude name="allProductsCategoryVisibilityTest" />
+                <exclude name="offersCategoryVisibilityTest" />
+                <exclude name="logoutTestForRegisteredUser" />
+            </methods>
+        </class>
 
         </classes>
     </test>
-
 
 </suite>

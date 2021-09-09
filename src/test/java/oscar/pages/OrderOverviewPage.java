@@ -72,7 +72,7 @@ public class OrderOverviewPage extends PageBase {
         updateBtn.click();
         return null;
     }
-    @FindBy(xpath = "//p[contains(text(),'Ihr Warenkorb ist leer')]")
+    @FindBy(id = "content_inner")
     WebElement basketOverview;
 
     public boolean isBasketOverviewDisplayed() {
